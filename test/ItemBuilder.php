@@ -2,6 +2,8 @@
 
 namespace Test;
 
+use App\Item;
+
 class ItemBuilder {
 
 	var $name;

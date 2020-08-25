@@ -47,6 +47,17 @@ class GildedRoseTest extends TestCase {
 		$this->assertEquals(6, $agedBrie->quality);
 	}
 
+	public function test_aged_brie_incrementa_calidad_despues_de_caducado(
+	) {
+		$agedBrie = ItemBuilder::newItem()
+			->withName("Aged Brie")
+			->withSellIn(-1)
+			->withQuality(5)
+			->build();
+		GildedRose::updateQuality(array($agedBrie));
+		$this->assertEquals(7, $agedBrie->quality);
+	}
+
 	public function test_calidad_nunca_mayor_de_50(
 	) {
 		$agedBrie = ItemBuilder::newItem()

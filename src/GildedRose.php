@@ -2,7 +2,7 @@
 
 namespace App;
 
-require_once 'src/Item.php';
+use App\Item;
 
 class GildedRose {
 
